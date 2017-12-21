@@ -1,4 +1,6 @@
-<%= link_to "Sign in with Facebook", user_auth0_omniauth_authorize_path %>
+<%= current_user.inspect %>
+<br/>
+<%= link_to "Sign in with NemID", user_auth0_omniauth_authorize_path %>
 
 <div id="root" style="width: 320px; margin: 40px auto; padding: 10px; border-style: dashed; border-width: 1px; box-sizing: border-box;">
     embedded area
@@ -13,7 +15,7 @@
       redirectUrl: '',
       responseType: 'code',
       params: {
-        scope: 'openid email' // Learn about scopes: https://auth0.com/docs/scopes
+        scope: 'openid profile email' // Learn about scopes: https://auth0.com/docs/scopes
       }
     }
   });
